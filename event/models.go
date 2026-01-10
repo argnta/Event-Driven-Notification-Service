@@ -23,3 +23,10 @@ type RequestBody struct {
 	UserTarget string      `json:"user_target"`
 	Payload    UserPayload `json:"payload"`
 }
+
+type Event struct {
+	ID         string     
+	RetryCount int         
+	Body       RequestBody 
+}
+

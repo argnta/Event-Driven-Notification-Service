@@ -24,7 +24,6 @@ func MainHandlers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// push ke queue
 	event.EventQueue <- reqBody
 
 	now := time.Now()
