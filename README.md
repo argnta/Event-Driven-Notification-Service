@@ -58,12 +58,11 @@ Tujuan utama:
 ## Running the Project
 
 ### 1. Build & Run
+
 ```bash
 go run main.go
 
-Server akan berjalan di http://localhost:8080.
-
-Test with curl (Linux/macOS)
+Test with curl
 
 curl -X POST http://localhost:8080/events \
   -H "Content-Type: application/json" \
@@ -79,7 +78,31 @@ curl -X POST http://localhost:8080/events \
   "received_at": "2026-01-10T07:23:45.6789+07:00"
 }
 
----
+```
+
+2. Test with curl
+
+``` bash
+curl -i -X POST http://localhost:8080/main \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": "req-001",
+    "action": "log",
+    "created": "2026-01-11T10:00:00Z"
+  }'
+```
+
+3. Example Response
+
+```bash
+{
+  "code": 200,
+  "status": "Success Received",
+  "message": "OK",
+  "data": "This is the example data"
+}
+```
+
 
 
 
